@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>reCAPTCHA</title>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body style='background-color: white;'>
+    <div style='height: 60px;'></div>
+    <form action="?" method="POST">
+      <div class="g-recaptcha" 
+        data-sitekey="6Lc_g4YaAAAAAEIXunors9v4CK50Rd0q4oiqR4BS"
+        data-callback="captchaCallback"
+        data-action='submit'></div>
+
+    </form>
+    <script>
+      function captchaCallback(token){
+        //console.log(response);
+        if(typeof Captcha!=="undefined"){
+          Captcha.postMessage(token);
+        }
+      }
+    </script>
+  </body>
+</html>
